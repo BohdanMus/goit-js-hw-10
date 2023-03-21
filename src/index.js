@@ -42,22 +42,23 @@ function renderCountryList(countries) {
 }
 
 function countryCardMarkup(countries) {
-  const markup = countries.map(country => {
-    return `<li>
+  const markup = countries
+    .map(country => {
+      return `<li>
     <img src="${country.flags.svg}" alt="Flag of ${
-      country.name.official
-    }" width="30" hight="20">
+        country.name.official
+      }" width="30" hight="20">
        <p>${country.name.official}</p>
           <p><b>Capital</b>: ${country.capital}</p>
           <p><b>Population</b>: ${country.population}</p>
           <p><b>Languages</b>: ${Object.values(country.languages)} </p>
               </li>`;
-  })
-  .join('');
+    })
+    .join('');
   countryList.innerHTML = markup;
 }
 
 function cleanHtml(params) {
-    countryList.innerHTML = '';
-    countryInfo.innerHTML = '';
+  countryList.innerHTML = '';
+  countryInfo.innerHTML = '';
 }
